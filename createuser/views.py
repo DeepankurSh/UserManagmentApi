@@ -24,7 +24,7 @@ class CreateusersAPIView(APIView):
 
 
 class UpdateusersAPIView(APIView):
-    def post(self, request, pk):
+    def put(self, request, pk):
         myuser = users.objects.get(id=pk)
         serializer = usersSerializers(instance=myuser, data=request.data)
         if serializer.is_valid():
